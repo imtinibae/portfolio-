@@ -1,0 +1,88 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=VT323&display=swap');
+
+
+body {
+    font-family : 'VT323';
+    background : url('/images/backgroundtexture.gif') no-repeat center center fixed; 
+    background-size : cover;
+}
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+   }
+
+   #introText {
+    font-family : 'VT323';
+    color : black; 
+    display: flex   ;
+    justify-content: center;
+    align-items: center;
+   }
+   
+   .button {
+    font-family: 'VT323';
+    background-color: grey;
+    border-radius: 15px; /* Utilisez une valeur en pixels pour le border-radius */
+    border: 2px solid white; /* Ajoutez une bordure pour voir le border-radius */
+    z-index : 2; 
+    padding: 10px 20px; /* Ajoutez du padding pour rendre le bouton plus grand */
+    cursor: pointer;
+   }
+
+   .box {
+    width: 200px; /* Largeur fixe pour toutes les boîtes */
+    height: 100px; /* Hauteur fixe pour toutes les boîtes */
+    margin: 10px; /* Marge pour espacer les boîtes */
+    border: 1px solid black; /* Bordure pour chaque boîte */
+    display: flex; /* Utilisez flexbox pour centrer le texte */
+    justify-content: center; /* Centre le texte horizontalement */
+    align-items: center; /* Centre le texte verticalement */
+}
+
+
+   
+
+/*
+h1 {
+    font-family: 'Rubik Mono One'; /* Utilisation de la famille de polices Rubik Mono One   
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: rgb(95, 10, 215);
+    color : white; 
+    display: flex   ;
+    justify-content: center;
+    align-items: center;
+    height: 85vh; 
+    z-index : 1;
+    position : absolute; 
+    width : 100%;
+    font-size : 100px;
+    text-align : center; 
+    line-height : 0.8; 
+  }
+
+  .intro {
+    font-family : 'VT323';
+    position : absolute;
+    color : black; 
+    z-index : 2;
+    display: flex   ;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+    width : 100%;
+    font-size : 80px;
+    text-align : center; 
+    line-height : 1.3;
+  }
+  */
+
+
+  
+
+  
+
+
