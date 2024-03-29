@@ -1,3 +1,6 @@
+let animationID;
+let introTextDisplayed = false;
+
 const dvdText = document.getElementById("dvdText");
 /* document.body.style.backgroundColor = "black";   */
 const colors = ["red", "green", "blue", "pink", "orange", "purple"];
@@ -18,20 +21,7 @@ const bounces = Math.floor(time / hRange) + Math.floor(time / vRange)
 animationID = requestAnimationFrame(loop);
 }
 
-function createBoxes() {
-    const categories = ["Expériences", "Formations", "Projets", "Compétences"];
-    const container = document.getElementById("boxes"); // Corrigez l'ID ici
-
-    categories.forEach(category => {
-        const box = document.createElement("div");
-        box.classList.add("box"); // Ajoutez une classe pour le style
-        box.textContent = category;
-        container.appendChild(box);
-    });
-}
-
-// Define the string you want to display
-const textToDisplay = "Hey there! I'm Tinéni Baeyens, a web developer in the making. I'm looking for an internship starting september 2024 in front-end development, or in IT project manager. ";
+const textToDisplay = "Hey there! I'm Tinéni Baeyens, a web developer in the making. I'm looking for an internship starting september 2024 in front-end/full stack development, or with an IT project manager. ";
 
 // Function to display text character by character
 function displayText(text) {
@@ -58,8 +48,40 @@ function createBoxes() {
         const box = document.createElement("div");
         box.classList.add("box"); // Ensure you have CSS for this class
         box.textContent = category;
+        // Add an event listener to each box
+        box.addEventListener('click', () => {
+            // Stop the animation
+            if (animationID) {
+                cancelAnimationFrame(animationID);
+                animationID = null; // Reset the ID
+            }
+            // Remove all child elements from the container except the clicked one
+            Array.from(container.children).forEach(child => {
+                if (child !== box) {
+                    container.removeChild(child);
+                }
+            });
+
+        /*     // Remove any text that might be displayed
+            const introText = document.getElementById("introText");
+            if (introText) {
+                introText.remove();
+            } */
+           
+            const textElement = document.createElement("p");
+            // Check if the clicked box is "Formations & Projets"
+            if (category === "Formations & Projects") {
+                window.open("formations-projets.html", "_blank");
+            } else if (category === "Expériences") {
+                textElement.textContent = "";
+            } else if (category === "Compétences") {
+                textElement.textContent = "";
+            }
+            container.appendChild(textElement);
+        });
         container.appendChild(box);
-    });
+            });
+    
 }
 document.getElementById("startButton").addEventListener("click", function() {
     const container = document.getElementById("boxes");
@@ -78,9 +100,13 @@ document.getElementById("startButton").addEventListener("click", function() {
         animationID = null; // Reset the ID
     }
 
-    displayText(textToDisplay)
-
-    
+    if(!introTextDisplayed) {
+        const introText = document.getElementById("introText");
+        if (introText) {
+            displayText(textToDisplay);
+        introTextDisplayed = true;
+    }
+}   
 });
 
 loop();

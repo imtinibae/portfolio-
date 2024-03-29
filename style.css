@@ -4,7 +4,7 @@
 
 body {
     font-family : 'VT323';
-    background : url('/images/backgroundtexture.gif') no-repeat center center fixed; 
+    background : url('images/backgroundtexture.gif') no-repeat center center fixed; 
     background-size : cover;
 }
 .centered {
@@ -41,6 +41,7 @@ body {
     display: flex; /* Utilisez flexbox pour centrer le texte */
     justify-content: center; /* Centre le texte horizontalement */
     align-items: center; /* Centre le texte verticalement */
+    cursor : pointer; 
 }
 
 
